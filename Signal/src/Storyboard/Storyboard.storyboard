@@ -471,7 +471,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-vN-Pjg">
+                            <view opaque="NO" contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-vN-Pjg">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kEV-0h-NsX">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1007,7 +1007,7 @@ A0 09 9A FF A8 8A 09 99</string>
                                     </variation>
                                 </view>
                                 <blurEffect style="dark"/>
-                            </visualEffectView>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="hdo-6G-gXy" firstAttribute="top" secondItem="VCu-vN-Pjg" secondAttribute="bottom" id="1dB-W2-GMz"/>
@@ -2253,14 +2253,14 @@ A0 09 9A FF A8 8A 09 99</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpy-zI-RID" userLabel="Overlay">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpy-zI-RID" userLabel="Overlay">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Wr4-YT-Zyv">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="dark"/>
-                            </visualEffectView>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYX-We-g3s" userLabel="conversation contact">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>

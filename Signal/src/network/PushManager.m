@@ -291,14 +291,18 @@
 
 - (TOCFuture *)registerForUserNotificationsFuture
 {
-    self.userNotificationFutureSource = [TOCFutureSource new];
-    
-    UIUserNotificationSettings *settings =
-        [UIUserNotificationSettings settingsForTypes:(UIUserNotificationType)[self allNotificationTypes]
-                                          categories:[NSSet setWithObjects:[self userNotificationsCallCategory], [self userNotificationsMessageCategory], nil]];
-    
-    [UIApplication.sharedApplication registerUserNotificationSettings:settings];
-    return self.userNotificationFutureSource.future;
+	self.userNotificationFutureSource = [TOCFutureSource new];
+	if( [UIApplication.sharedApplication respondsToSelector:@selector(registerUserNotificationSettings:)] ){
+		UIUserNotificationSettings *settings =
+		[UIUserNotificationSettings settingsForTypes:(UIUserNotificationType)[self allNotificationTypes]
+										  categories:[NSSet setWithObjects:[self userNotificationsCallCategory], [self userNotificationsMessageCategory], nil]];
+
+		[UIApplication.sharedApplication registerUserNotificationSettings:settings];
+	} else {
+		NSUInteger notifTypes = UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeNewsstandContentAvailability;
+		[UIApplication.sharedApplication registerForRemoteNotificationTypes:notifTypes];
+	}
+	return self.userNotificationFutureSource.future;
 }
 
 - (UIUserNotificationCategory*)userNotificationsMessageCategory{
