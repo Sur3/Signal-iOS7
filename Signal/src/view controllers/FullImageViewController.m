@@ -192,8 +192,8 @@
     _isPresenting = YES;
     self.view.userInteractionEnabled = NO;
     [self.view addSubview:self.imageView];
-    self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-    self.view.alpha = 0;
+    self.modalPresentationStyle = UIModalPresentationCurrentContext; //UIModalPresentationOverCurrentContext
+        self.view.alpha = 0;
     
     [viewController presentViewController:self animated:NO completion:^{
             [UIView animateWithDuration:0.4f

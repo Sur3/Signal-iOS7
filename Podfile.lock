@@ -46,7 +46,7 @@ PODS:
     - CocoaLumberjack (~> 1.9)
   - ProtocolBuffers (1.9.8)
   - SCWaveformView (1.0.0)
-  - SocketRocket (0.3.1-beta2)
+  - SocketRocket (0.5.1)
   - SQLCipher/common (3.1.0)
   - SQLCipher/fts (3.1.0):
     - SQLCipher/common
@@ -63,20 +63,17 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.3)
-  - APDropDownNavToolbar (from `https://github.com/corbett/APDropDownNavToolbar.git`,
-    branch `master`)
+  - APDropDownNavToolbar (from `https://github.com/corbett/APDropDownNavToolbar.git`, branch `master`)
   - AxolotlKit (~> 0.6.2)
   - DJWActionSheet
   - FFCircularProgressView (>= 0.1)
-  - JSQMessagesViewController (from `https://github.com/WhisperSystems/JSQMessagesViewController`,
-    commit `9be8f6ed65eb55368a5ff767f055158cf585065f`)
+  - JSQMessagesViewController (from `https://github.com/WhisperSystems/JSQMessagesViewController`, commit `9be8f6ed65eb55368a5ff767f055158cf585065f`)
   - libPhoneNumber-iOS (~> 0.8.2)
   - Mantle (~> 2.0)
   - OpenSSL (~> 1.0.201)
   - PastelogKit (~> 1.2)
   - SCWaveformView (~> 1.0)
-  - SocketRocket (from `https://github.com/FredericJacobs/SocketRocket.git`, commit
-    `73d8a19`)
+  - SocketRocket
   - SSKeychain
   - TwistedOakCollapsingFutures (~> 1.0)
   - UICKeyChainStore (from `Podspecs/UICKeyChainStore.podspec`)
@@ -89,9 +86,6 @@ EXTERNAL SOURCES:
   JSQMessagesViewController:
     :commit: 9be8f6ed65eb55368a5ff767f055158cf585065f
     :git: https://github.com/WhisperSystems/JSQMessagesViewController
-  SocketRocket:
-    :commit: 73d8a19
-    :git: https://github.com/FredericJacobs/SocketRocket.git
   UICKeyChainStore:
     :podspec: Podspecs/UICKeyChainStore.podspec
 
@@ -102,9 +96,6 @@ CHECKOUT OPTIONS:
   JSQMessagesViewController:
     :commit: 9be8f6ed65eb55368a5ff767f055158cf585065f
     :git: https://github.com/WhisperSystems/JSQMessagesViewController
-  SocketRocket:
-    :commit: 73d8a19
-    :git: https://github.com/FredericJacobs/SocketRocket.git
 
 SPEC CHECKSUMS:
   '25519': f4e131763c4e3551951d27ff1af258a93cd94f3e
@@ -118,17 +109,19 @@ SPEC CHECKSUMS:
   JSQMessagesViewController: 9fd7e9ac96e9fc91f2deca86928e2cc916aeebaa
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   libPhoneNumber-iOS: dbfc7b4128510a4955df3e5a6f125393fc9ebc2f
-  Mantle: 17de73ef929db2234d76fde2aacfb89ab11c61e8
-  OpenSSL: 4e990d04b14015c49c800c400b86ae44a4818a5c
+  Mantle: d7c75b6fb789b20f7ae30cd0d09435fe545896ff
+  OpenSSL: e10ecaf2f53a6cfa759a29525acda762682f7551
   PastelogKit: c73795b8c0bbf33ea45d3b6a5eabb373be3d5955
   ProtocolBuffers: 9a4a171c0c7cc8f21dd29aeca4f9ac775d84a880
   SCWaveformView: 52a96750255d817e300565a80c81fb643e233e07
-  SocketRocket: 70df1983148525857ced17c57207bfb939bc6b8e
-  SQLCipher: c44fcca49c31483c2489cfb79aa7a69407f3794a
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  SQLCipher: 4684434d5791db86512cd7e02172aefba575849e
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
   TwistedOakCollapsingFutures: f359b90f203e9ab13dfb92c9ff41842a7fe1cd0c
   UICKeyChainStore: d4c0f4e313d67b2f23b6614adca55351accac15a
   UnionFind: c33be5adb12983981d6e827ea94fc7f9e370f52d
   YapDatabase: 13566c87dc9226a0f15d755edba08e8ad94cac9f
 
-COCOAPODS: 0.36.3
+PODFILE CHECKSUM: 35a08362624639e544eeaf58cd7d26a93abb44ce
+
+COCOAPODS: 1.0.1
