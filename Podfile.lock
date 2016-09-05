@@ -72,6 +72,7 @@ DEPENDENCIES:
   - Mantle (~> 2.0)
   - OpenSSL (~> 1.0.201)
   - PastelogKit (~> 1.2)
+  - ProtocolBuffers
   - SCWaveformView (~> 1.0)
   - SocketRocket
   - SSKeychain
@@ -122,6 +123,6 @@ SPEC CHECKSUMS:
   UnionFind: c33be5adb12983981d6e827ea94fc7f9e370f52d
   YapDatabase: 13566c87dc9226a0f15d755edba08e8ad94cac9f
 
-PODFILE CHECKSUM: 35a08362624639e544eeaf58cd7d26a93abb44ce
+PODFILE CHECKSUM: e943e3e761051c499c00f4258fe6d09c2c53551b
 
 COCOAPODS: 1.0.1

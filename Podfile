@@ -1,4 +1,4 @@
-platform :ios, '7.0'
+platform :ios, '7.1'
 source 'https://github.com/CocoaPods/Specs.git'
 inhibit_all_warnings!
 
@@ -15,6 +15,7 @@ def shared_pods
  pod 'YapDatabase/SQLCipher'
  pod 'SSKeychain'     
  pod 'DJWActionSheet'
+ pod 'ProtocolBuffers'
 
  pod 'SocketRocket'
  pod 'JSQMessagesViewController',  :git => 'https://github.com/WhisperSystems/JSQMessagesViewController', :commit => '9be8f6ed65eb55368a5ff767f055158cf585065f'

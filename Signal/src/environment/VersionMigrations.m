@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Open Whisper Systems. All rights reserved.
 //
 
+#import "../CompatibleAlertController/CompatibleAlertController.h"
+
 #import "VersionMigrations.h"
 
 #import "Environment.h"
@@ -125,9 +127,9 @@
     
     [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:YES];
     
-    UIAlertController *waitingController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"REGISTER_TEXTSECURE_COMPONENT", nil)
+    CompatibleAlertController *waitingController = [CompatibleAlertController compatibleAlertControllerWithTitle:NSLocalizedString(@"REGISTER_TEXTSECURE_COMPONENT", nil)
                                                                                message:nil
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                                                                        preferredStyle:CompatibleAlertControllerStyleAlert];
     
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:waitingController animated:YES completion:nil];
     
@@ -149,12 +151,12 @@
     }];
 }
 
-+ (void)refreshLock:(UIAlertController*)waitingController {
++ (void)refreshLock:(CompatibleAlertController*)waitingController {
     [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:NO];
     [waitingController dismissViewControllerAnimated:NO completion:^{
-        UIAlertController *retryController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"REGISTER_TEXTSECURE_FAILED_TITLE", nil)
+        CompatibleAlertController *retryController = [CompatibleAlertController compatibleAlertControllerWithTitle:NSLocalizedString(@"REGISTER_TEXTSECURE_FAILED_TITLE", nil)
                                                                                  message:NSLocalizedString(@"REGISTER_TEXTSECURE_FAILED", nil)
-                                                                          preferredStyle:UIAlertControllerStyleAlert];
+                                                                          preferredStyle:CompatibleAlertControllerStyleAlert];
         
         [retryController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"REGISTER_FAILED_TRY_AGAIN", nil)
                                                             style:UIAlertActionStyleDefault
