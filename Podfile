@@ -1,6 +1,7 @@
 platform :ios, '7.1'
 source 'https://github.com/CocoaPods/Specs.git'
 inhibit_all_warnings!
+workspace 'Signal'
 
 def shared_pods
  pod 'OpenSSL',                    '~> 1.0.201'
@@ -12,7 +13,7 @@ def shared_pods
  pod 'Mantle',                     '~> 2.0'
  pod 'FFCircularProgressView',     '>= 0.1'
  pod 'SCWaveformView',             '~> 1.0'
- pod 'YapDatabase/SQLCipher'
+ pod 'YapDatabase/SQLCipher',      '<= 2.5.4’
  pod 'SSKeychain'     
  pod 'DJWActionSheet'
  pod 'ProtocolBuffers'

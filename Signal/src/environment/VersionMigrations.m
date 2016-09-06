@@ -128,10 +128,12 @@
     [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:YES];
     
     CompatibleAlertController *waitingController = [CompatibleAlertController compatibleAlertControllerWithTitle:NSLocalizedString(@"REGISTER_TEXTSECURE_COMPONENT", nil)
-                                                                               message:nil
-                                                                        preferredStyle:CompatibleAlertControllerStyleAlert];
+            message:nil
+            preferedStyle:CompatibleAlertControllerStyleAlert];
     
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:waitingController animated:YES completion:nil];
+    [waitingController presentCompatibleAlertController:[UIApplication sharedApplication].keyWindow.rootViewController animated:YES completion:nil];
+               //[UIApplication sharedApplication].keyWindow.rootViewController
+    //[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:waitingController animated:YES completion:nil];
     
     [PushManager.sharedManager registrationAndRedPhoneTokenRequestWithSuccess:^(NSData *pushToken, NSData *voipToken, NSString *signupToken) {
         [TSAccountManager registerWithRedPhoneToken:signupToken pushToken:pushToken voipToken:voipToken success:^{
@@ -156,15 +158,16 @@
     [waitingController dismissViewControllerAnimated:NO completion:^{
         CompatibleAlertController *retryController = [CompatibleAlertController compatibleAlertControllerWithTitle:NSLocalizedString(@"REGISTER_TEXTSECURE_FAILED_TITLE", nil)
                                                                                  message:NSLocalizedString(@"REGISTER_TEXTSECURE_FAILED", nil)
-                                                                          preferredStyle:CompatibleAlertControllerStyleAlert];
+                                                                          preferedStyle:CompatibleAlertControllerStyleAlert];
         
-        [retryController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"REGISTER_FAILED_TRY_AGAIN", nil)
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction *action) {
+        [retryController addAction:[CompatibleAlertAction compatibleActionWithTitle:NSLocalizedString(@"REGISTER_FAILED_TRY_AGAIN", nil)
+                                                            style:CompatibleAlertActionStyleDefault
+                                                          handler:^(CompatibleAlertAction *action) {
                                                               [self migrateFrom1Dot0Dot2ToVersion2Dot0];
                                                           }]];
         
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:retryController animated:YES completion:nil];
+        [retryController presentCompatibleAlertController:[UIApplication sharedApplication].keyWindow.rootViewController animated:YES completion:nil];
+        //[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:retryController animated:YES completion:nil];
     }];
 }
 
@@ -245,14 +248,14 @@
     [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:YES];
     [[NSUserDefaults standardUserDefaults] setObject:@YES forKey:NEEDS_TO_REGISTER_PUSH_KEY];
     
-    UIAlertController *waitingController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Upgrading Signal ...", nil)
+    CompatibleAlertController *waitingController = [CompatibleAlertController compatibleAlertControllerWithTitle:NSLocalizedString(@"Upgrading Signal ...", nil)
                                                                                message:nil
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                                                                        preferedStyle:CompatibleAlertControllerStyleAlert];
     
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:waitingController
-                                                                                 animated:YES
-                                                                               completion:nil];
-    
+    [waitingController presentCompatibleAlertController:[UIApplication sharedApplication].keyWindow.rootViewController animated:YES completion:nil];
+
+    //    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:waitingController animated:YES completion:nil];
+
     __block failedPushRegistrationBlock failure = ^(NSError *error) {
         [self refreshPushLock:waitingController];
     };
@@ -265,22 +268,22 @@
     } failure:failure];
 }
 
-+ (void)refreshPushLock:(UIAlertController*)waitingController {
++ (void)refreshPushLock:(CompatibleAlertController*)waitingController {
     [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:NO];
     [waitingController dismissViewControllerAnimated:NO completion:^{
-        UIAlertController *retryController = [UIAlertController alertControllerWithTitle:@"Upgrading Signal failed"
+        CompatibleAlertController *retryController = [CompatibleAlertController compatibleAlertControllerWithTitle:@"Upgrading Signal failed"
                                                                                  message:@"An error occured while upgrading, please try again."
-                                                                          preferredStyle:UIAlertControllerStyleAlert];
+                                                                          preferedStyle:CompatibleAlertControllerStyleAlert];
         
-        [retryController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"REGISTER_FAILED_TRY_AGAIN", nil)
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction *action) {
+        [retryController addAction:[CompatibleAlertAction compatibleActionWithTitle:NSLocalizedString(@"REGISTER_FAILED_TRY_AGAIN", nil)
+                                                            style:CompatibleAlertActionStyleDefault
+                                                          handler:^(CompatibleAlertAction *action) {
                                                               [self blockingPushRegistration];
                                                           }]];
         
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:retryController
-                                                                                     animated:YES
-                                                                                   completion:nil];
+        [retryController presentCompatibleAlertController:[UIApplication sharedApplication].keyWindow.rootViewController animated:YES completion:nil];
+        
+//[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:retryController animated:YES completion:nil];
     }];
 }
 

@@ -2709,6 +2709,7 @@
 				D221A087169C9E5E00537ABF /* Resources */,
 				DC8D50B785074F8FA3DBAACE /* [CP] Copy Pods Resources */,
 				773E0CE661756FD79B884D73 /* [CP] Embed Pods Frameworks */,
+				62489B20D65909AEE8D83048 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2732,6 +2733,7 @@
 				D221A0A8169C9E5F00537ABF /* ShellScript */,
 				BA4E2805598B464FB7B24430 /* [CP] Copy Pods Resources */,
 				20CFAFFB00213F704F699C02 /* [CP] Embed Pods Frameworks */,
+				C6CC1D36CC63E5C1036743C4 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2954,6 +2956,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		62489B20D65909AEE8D83048 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Signal/Pods-Signal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		773E0CE661756FD79B884D73 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2982,6 +2999,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalTests/Pods-SignalTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6CC1D36CC63E5C1036743C4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SignalTests/Pods-SignalTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D221A0A8169C9E5F00537ABF /* ShellScript */ = {
