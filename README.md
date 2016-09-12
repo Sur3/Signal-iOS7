@@ -5,6 +5,9 @@ Signal allows you to make private phone calls ([RedPhone protocol](https://githu
 
 [![Available on the AppStore](http://cl.ly/WouG/Download_on_the_App_Store_Badge_US-UK_135x40.svg)](https://itunes.apple.com/app/id874139669)
 
+## ToDo
+PushKit has to be replaced by an iOS7 equivalent.
+
 ## Translation
 
 Help us translate Signal! The translation effort happens on [Transifex](https://www.transifex.com/projects/p/signal-ios/)
